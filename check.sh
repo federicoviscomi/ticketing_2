@@ -31,3 +31,5 @@ jq --color-output <<< "${response}"
 response=$(curl -k --request POST https://ticketing.dev/api/users/fafafafa)
 jq --color-output <<< "${response}"
 
+
+kubectl get pods
