@@ -1,0 +1,5 @@
+version: "3.9"
+services:
+  auth:
+    build: auth
+    image: federicoviscomi/auth
