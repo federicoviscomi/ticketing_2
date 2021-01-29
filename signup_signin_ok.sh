@@ -19,3 +19,18 @@ signin=$(
 )
 jq --color-output <<<"${signin}"
 cat  cookies/signin_cookie.txt
+current=$(
+  curl -k\
+       --header "Content-Type: application/json" \
+       --request GET\
+       -b cookies/signin_cookie.txt\
+       https://ticketing.dev/api/users/currentuser
+)
+jq --color-output <<<"${current}"
+currentNoCookie=$(
+  curl -k\
+       --header "Content-Type: application/json" \
+       --request GET\
+       https://ticketing.dev/api/users/currentuser
+)
+jq --color-output <<<"${currentNoCookie}"
