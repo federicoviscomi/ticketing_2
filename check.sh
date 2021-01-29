@@ -12,7 +12,7 @@ response=$(
 
 jq --color-output <<<"${response}"
 
-response=$(
+signup=$(
   curl -k \
     --header "Content-Type: application/json" \
     --request POST \
@@ -21,7 +21,7 @@ response=$(
     https://ticketing.dev/api/users/signup
 )
 
-jq --color-output <<<"${response}"
+jq --color-output <<<"${signup}"
 
 cat cookies.txt
 
@@ -34,6 +34,16 @@ response=$(
     https://ticketing.dev/api/users/signup
 )
 jq --color-output <<<"${response}"
+
+signin=$(
+  curl -k \
+    --header "Content-Type: application/json" \
+    --request POST \
+    --data '{"email":"asdf2@asdf.asdf","password":"dfdfdfd"}' \
+    https://ticketing.dev/api/users/signin
+)
+jq --color-output <<<"${signin}"
+
 
 response=$(curl -k --request GET https://ticketing.dev/api/users/signup/asdfdfg)
 jq --color-output <<<"${response}"
