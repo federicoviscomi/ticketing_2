@@ -34,3 +34,21 @@ currentNoCookie=$(
        https://ticketing.dev/api/users/currentuser
 )
 jq --color-output <<<"${currentNoCookie}"
+signout=$(
+  curl -k \
+    --header "Content-Type: application/json" \
+    --request POST \
+    -c cookies/signin_cookie.txt \
+    --data '{"email":"as33df2@asdf.asdf","password":"dfdfdfd"}' \
+    https://ticketing.dev/api/users/signout
+)
+jq --color-output <<<"${signout}"
+current=$(
+  curl -k\
+       --header "Content-Type: application/json" \
+       --request GET\
+       -b cookies/signin_cookie.txt\
+       https://ticketing.dev/api/users/currentuser
+)
+jq --color-output <<<"${current}"
+
