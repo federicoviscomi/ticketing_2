@@ -16,11 +16,14 @@ response=$(
   curl -k \
     --header "Content-Type: application/json" \
     --request POST \
-    --data '{"email":"asdf2@asdf.asdf","password":"dfdfdfd"}' \
+    --data '{"email":"as33df2@asdf.asdf","password":"dfdfdfd"}' \
+    -c cookies.txt\
     https://ticketing.dev/api/users/signup
 )
 
 jq --color-output <<<"${response}"
+
+cat cookies.txt
 
 #second time
 response=$(
