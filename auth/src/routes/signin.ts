@@ -3,9 +3,8 @@ import {body} from 'express-validator';
 
 import {Password} from '../services/password';
 import {User} from '../models/user';
-import {validateRequest} from '../middlewares/validate-request';
-import {BadRequestError} from '../errors/bad-request-error';
 import jwt from "jsonwebtoken";
+import {BadRequestError, validateRequest} from "@procigatto/common";
 
 const router = express.Router();
 
