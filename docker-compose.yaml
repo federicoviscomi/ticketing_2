@@ -6,3 +6,6 @@ services:
   client:
     build: client
     image: federicoviscomi/client
+  tickets:
+    build: tickets
+    image: federicoviscomi/tickets

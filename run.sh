@@ -3,6 +3,10 @@ cd auth
 npm update @procigatto/common --save
 npm install
 cd ../
+cd tickets
+npm update @procigatto/common --save
+npm install
+cd ../
 cd client
 npm update @procigatto/common --save
 npm install
