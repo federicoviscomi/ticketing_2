@@ -2,10 +2,12 @@ set -euox pipefail
 cd auth
 npm update @procigatto/common --save
 npm install
+npm run test
 cd ../
 cd tickets
 npm update @procigatto/common --save
 npm install
+npm run test
 cd ../
 cd client
 npm update @procigatto/common --save
