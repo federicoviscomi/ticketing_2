@@ -1,4 +1,13 @@
 set -euox pipefail
+cd common
+pwd
+git add .
+git commit -m "updates" || true
+npm version patch
+npm run clean
+npm run build
+npm publish --access public
+cd ../
 cd auth
 npm update @procigatto/common --save
 npm install
@@ -13,14 +22,9 @@ cd client
 npm update @procigatto/common --save
 npm install
 cd ../
-cd common
-pwd
-git add .
-git commit -m "updates" || true
-npm version patch
-npm run clean
-npm run build
-npm publish --access public
+cd nats-test
+npm update @procigatto/common --save
+npm install
 cd ../
 docker-compose build
 docker-compose push
