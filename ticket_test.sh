@@ -44,7 +44,6 @@ getTicket=$(
     https://ticketing.dev/api/tickets/${id}
 )
 jq --color-output <<<"${getTicket}"
-
 getTicket=$(
   curl -k \
     --header "Content-Type: application/json" \
@@ -53,3 +52,20 @@ getTicket=$(
     https://ticketing.dev/api/tickets/
 )
 jq --color-output <<<"${getTicket}"
+updateTicket=$(
+  curl -k \
+    --header "Content-Type: application/json" \
+    --request PUT \
+    -b cookies/signin_cookie.txt \
+    --data '{"title":"asdf","price":"2"}' \
+    https://ticketing.dev/api/tickets/${id}
+)
+jq --color-output <<<"${updateTicket}"
+getTickets=$(
+  curl -k \
+    --header "Content-Type: application/json" \
+    --request GET \
+    -b cookies/signin_cookie.txt \
+    https://ticketing.dev/api/tickets/
+)
+jq --color-output <<<"${getTickets}"
