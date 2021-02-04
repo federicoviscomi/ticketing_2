@@ -14,6 +14,7 @@ npm update @procigatto/common --save
 npm install
 cd ../
 cd common
+pwd
 git add .
 git commit -m "updates" || true
 npm version patch
