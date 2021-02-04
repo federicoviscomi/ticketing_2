@@ -13,6 +13,7 @@ stan.on('connect', async () => {
     const publisher = new TicketCreatedPublisher(stan);
     try {
         await publisher.publish({
+            userId: 'asdf',
             id: '123',
             price: 10,
             title: 'concert'

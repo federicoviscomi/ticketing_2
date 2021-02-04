@@ -1,6 +1,6 @@
 set -euox pipefail
 cd common
-pwd
+npm install
 git add .
 git commit -m "updates" || true
 npm version patch
@@ -11,12 +11,12 @@ cd ../
 cd auth
 npm update @procigatto/common --save
 npm install
-npm run test
+#npm run test
 cd ../
 cd tickets
 npm update @procigatto/common --save
 npm install
-npm run test
+#npm run test
 cd ../
 cd client
 npm update @procigatto/common --save
