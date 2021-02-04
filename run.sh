@@ -15,7 +15,7 @@ cd ../
 cd auth
 npm update @procigatto/common --save
 npm install
-#npm run test
+npm run test
 cd ../
 
 #tickets
@@ -38,5 +38,7 @@ npm install
 cd ../
 
 docker-compose build
+
 docker-compose push
+
 skaffold dev
