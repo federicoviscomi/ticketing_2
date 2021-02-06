@@ -1,5 +1,5 @@
 import {Message} from 'node-nats-streaming';
-import {Listener, Subjects, TicketCreatedEvents} from "@procigatto/common";
+import {Listener, Subjects, TicketCreatedEvents} from '@procigatto/common';
 
 export class TicketCreatedListener extends Listener<TicketCreatedEvents> {
     readonly subject: Subjects.TicketCreated = Subjects.TicketCreated;

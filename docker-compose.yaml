@@ -9,3 +9,6 @@ services:
   tickets:
     build: tickets
     image: federicoviscomi/tickets
+  orders:
+    build: orders
+    image: federicoviscomi/orders
