@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import { Ticket } from '../models/ticket';
+import {NotFoundError} from "@procigatto/common";
 
 const router = express.Router();
 
