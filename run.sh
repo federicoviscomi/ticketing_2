@@ -29,7 +29,7 @@ cd ../
 cd orders
 npm update @procigatto/common --save
 npm install
-#npm run test
+npm run test
 cd ../
 
 #client
