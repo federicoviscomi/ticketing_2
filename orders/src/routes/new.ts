@@ -23,11 +23,13 @@ router.post(
       .not()
       .isEmpty()
       .custom((input: string) => mongoose.Types.ObjectId.isValid(input))
-      .withMessage('TicketId must be provided'),
+      .withMessage('TicketId must be provided and valid'),
   ],
   validateRequest,
   async (req: Request, res: Response) => {
     const { ticketId } = req.body;
+    console.log(ticketId);
+    console.log(await Ticket.find({}));
 
     // Find the ticket the user is trying to order in the database
     const ticket = await Ticket.findById(ticketId);
