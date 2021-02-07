@@ -46,15 +46,17 @@ getTicket=$(
 )
 jq --color-output <<<"${getTicket}"
 
-TODO fix this
+#the order service is not going to find
+#the given ticket because the events part
+#of the project has not been implemented yet!
 set -x
-#createOrder=$(
+createOrder=$(
   curl -k \
     --header "Content-Type: application/json" \
     --request POST \
     -b cookies/signin_cookie.txt \
     --data '{"ticketId":"'${id}'"}'\
     https://ticketing.dev/api/orders
-#)
-#jq --color-output <<<"${createOrder}"
+)
+jq --color-output <<<"${createOrder}"
 set +x
