@@ -1,6 +1,6 @@
-import {Publisher, Subjects, TicketUpdatedEvents} from '@procigatto/common';
+import {Publisher, Subjects, TicketUpdatedEvent} from '@procigatto/common';
 
-export class TicketUpdatedPublisher extends Publisher<TicketUpdatedEvents> {
+export class TicketUpdatedPublisher extends Publisher<TicketUpdatedEvent> {
     subject: Subjects.TicketUpdated = Subjects.TicketUpdated;
 
 }

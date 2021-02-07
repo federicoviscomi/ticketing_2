@@ -1,44 +1,49 @@
 set -euox pipefail
 
 # common
-cd common
-npm install
-git add .
-git commit -m "updates" || true
-npm version patch
-npm run clean
-npm run build
-npm publish --access public
-cd ../
+#cd common
+#npm install
+#git add .
+#git commit -m "updates" || true
+#npm version patch
+#npm run clean
+#npm run build
+#npm publish --access public
+#cd ../
 
-#auth
+echo -----------
+echo AUTH
 cd auth
 npm update @procigatto/common --save
 npm install
 npm run test
 cd ../
 
-#tickets
+echo -----------
+echo TICKETS
 cd tickets
 npm update @procigatto/common --save
 npm install
 npm run test
 cd ../
 
-#orders
+echo -----------
+echo ORDERS
 cd orders
 npm update @procigatto/common --save
 npm install
 npm run test
 cd ../
 
-#client
+echo -----------
+echo CLIENT
 cd client
 npm update @procigatto/common --save
 npm install
 cd ../
 
-#nats-test
+echo -----------
+echo NATS TEST
 cd nats-test
 npm update @procigatto/common --save
 npm install
