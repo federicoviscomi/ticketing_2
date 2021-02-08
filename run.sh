@@ -5,7 +5,7 @@ echo
 echo -----------
 echo COMMON
 cd common
-UPDATE_COMMON="false"
+UPDATE_COMMON="true"
 if ! git diff-index --quiet HEAD --; then
   echo "changes in common"
   npm install
