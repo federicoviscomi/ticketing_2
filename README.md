@@ -9,10 +9,4 @@
 
 TODO implement 318
 
-
-2hr 43min
-    30min
-4hr 12min
-1hr 36min
-2hr 38min
-1hr 43min
+10.15 hours left
