@@ -1,19 +1,19 @@
 set -euox pipefail
 
-echo
-echo
-echo -----------
-echo COMMON
-cd common
-echo "changes in common"
-npm install
-git add .
-git commit -m "updates" || true
-npm version patch
-npm run clean
-npm run build
-npm publish --access public
-cd ../
+#echo
+#echo
+#echo -----------
+#echo COMMON
+#cd common
+#echo "changes in common"
+#npm install
+#git add .
+#git commit -m "updates" || true
+#npm version patch
+#npm run clean
+#npm run build
+#npm publish --access public
+#cd ../
 
 echo
 echo
